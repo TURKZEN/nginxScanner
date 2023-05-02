@@ -14,7 +14,12 @@ def serverDetection():
             req = requests.get("http://{}".format(ip))
             return req.headers.get("server")
         except:
-            print("Error !")
+            print("""
+            Error !
+
+            Could not detect server type.
+            """)
+            exit()
 def banner():
     pass
 
