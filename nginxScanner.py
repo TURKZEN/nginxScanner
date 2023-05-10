@@ -16,21 +16,44 @@ def usage():
 
     """)
     exit()
-try:
-    IP = argv[1]
-except:
-    usage()
-try:
-    ipCheck(IP)
 
-except ValueError:
+def ip():
+    pass
 
-    if not urlCheck(IP):
+def url():
+    pass
+
+
+def verify():
+    try:
+        IP = argv[1]
+    except:
         usage()
+    try:
+        ipCheck(IP)
+
+    except ValueError:
+
+        if not urlCheck(IP):
+            usage()
+        else:
+            url()
+            
     else:
-        print("URL")
-        
-else:
-    print("IP")
+        ip()
+
+
+def banner():
+    pass
+
+
+def Main():
+    banner()
+    verify()
+    
+
+if __name__ == "__main__":
+    Main()
+
 
 
