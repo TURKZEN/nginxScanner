@@ -1,34 +1,27 @@
 #! /usr/bin/python3
 
-import requests
+from ipaddress import ip_address as ipCheck
+from validators import url as urlCheck
 from sys import argv,exit
 
-def serverDetection():
-    try:
-        ip = argv[1]
-    except:
-        return "Usage: nginxScanner <IP>"
-        exit()
+def usage():
+    print("Usage : nginxScanner <IP>")
+    exit()
+try:
+    IP = argv[1]
+except:
+    usage()
+try:
+    ipCheck(IP)
+
+except ValueError:
+
+    if not urlCheck(IP):
+        usage()
     else:
-        try:
-            req = requests.get("http://{}".format(ip))
-            return req.headers.get("server")
-        except:
-            print("""
-            Error !
-
-            Could not detect server type.
-            """)
-            exit()
-def banner():
-    pass
-
-def Main():
-    banner()
-    serverType = serverDetection()
-    print(serverType)
+        print("URL")
+        
+else:
+    print("IP")
 
 
-
-if __name__ == "__main__":
-    Main()
