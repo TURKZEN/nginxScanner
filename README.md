@@ -25,8 +25,7 @@ The nginx scanner detects the current nginx version on the web server and detect
 `nginxScanner <IP> or <URL> `
 
 ### [+] Credits 
- TURKZEN
- OzlemBalci
+ TURKZEN & OzlemBalci
  
 
 ### [+] Find me on 
