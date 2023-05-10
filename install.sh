@@ -9,7 +9,7 @@ sudo chmod 777 /usr/bin/nginxScanner
 echo """
 # /bin/bash
 
-python3 /opt/nginxScanner/nginxScanner.py
+python3 /opt/nginxScanner/nginxScanner.py $1
 
 """ > /usr/bin/nginxScanner
 echo ""
