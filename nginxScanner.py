@@ -18,10 +18,10 @@ def usage():
     exit()
 
 def ip():
-    pass
+    print("IP")
 
 def url():
-    pass
+    print("URL")
 
 
 def verify():
