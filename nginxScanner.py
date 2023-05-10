@@ -5,7 +5,16 @@ from validators import url as urlCheck
 from sys import argv,exit
 
 def usage():
-    print("Usage : nginxScanner <IP>")
+    print("""
+    Usage: nginxScanner <IP> or <URL>
+    
+    EXAMPLES:
+
+    nginxScanner 192.168.1.1
+    nginxScanner https://www.example.com
+    
+
+    """)
     exit()
 try:
     IP = argv[1]
