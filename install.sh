@@ -13,6 +13,7 @@ python3 /opt/nginxScanner/nginxScanner.py
 
 """ > /usr/bin/nginxScanner
 
+echo "installation complete!"
 
-
+nginxScanner
 
