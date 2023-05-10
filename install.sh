@@ -1,5 +1,7 @@
 # /bin/bash
 
+pip3 install -r requirements.txt
+
 sudo cp -r ../nginxScanner /opt/
 
 sudo touch /usr/bin/nginxScanner
