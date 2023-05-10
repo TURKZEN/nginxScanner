@@ -12,7 +12,7 @@ echo """
 python3 /opt/nginxScanner/nginxScanner.py
 
 """ > /usr/bin/nginxScanner
-
+echo ""
 echo "installation complete!"
 
 sleep 1 
