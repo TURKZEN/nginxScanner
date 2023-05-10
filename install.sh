@@ -15,5 +15,7 @@ python3 /opt/nginxScanner/nginxScanner.py
 
 echo "installation complete!"
 
+sleep 1 
+
 nginxScanner
 
