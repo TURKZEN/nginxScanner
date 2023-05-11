@@ -18,11 +18,33 @@ def usage():
     """)
     exit()
 
-def serverParser(serverType):
-    print(serverType)
+def detectionCVE(serverVersion):
+    
+    print(serverVersion)
 
+def serverParser(serverType):
+    
+    serverType = str(serverType)
+    try:
+        serverType = serverType.split("/")
+    except:
+        print("Server type is not Nginx !")
+        exit()
+    else:
+        try:
+            serverName = serverType[0]
+            serverVersion = serverType[1]
+        except:
+            print("Server type is not Nginx !")
+            exit()
+        else:
+            if serverName == "nginx":
+                detectionCVE(serverVersion)
+            else:
+                print("Server type is not Nginx !")
+                exit()
 def ip(IP):
-    print("IP")
+    
     try:
         req = get("http://{}".format(IP))
     except:
@@ -39,7 +61,7 @@ def ip(IP):
         serverParser(serverType)
 
 def url(URL):
-    print("URL")
+    
     try:
         req = get(URL)
     except:
