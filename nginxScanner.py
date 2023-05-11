@@ -17,21 +17,41 @@ def usage():
 
     """)
     exit()
-    
+
 def serverParser(serverType):
     print(serverType)
 
 def ip(IP):
     print("IP")
-    req = get("http://{}".format())
-    serverType = req.headers.get("Server")
-    serverParser(serverType)
+    try:
+        req = get("http://{}".format(IP))
+    except:
+        print("The server is unreachable !")
+        exit()
+    
+    try:
+        serverType = req.headers.get("Server")
+    except:
+        print("Server type cannot be determined")
+        exit()
+    else:
+        serverParser(serverType)
 
 def url(URL):
     print("URL")
-    req = get(URL)
-    serverType = req.headers.get("Server")
-    serverParser(serverType)
+    try:
+        req = get(URL)
+    except:
+        print("The server is unreachable !")
+        exit()
+    
+    try:
+        serverType = req.headers.get("Server")
+    except:
+        print("Server type cannot be determined")
+        exit()
+    else:
+        serverParser(serverType)
 
 def verify():
     try:
@@ -64,7 +84,13 @@ def Main():
     
 
 if __name__ == "__main__":
-    Main()
-
+    try:
+        Main()
+    except KeyboardInterrupt:
+        print()
+        print("Logget out !")
+    except EOFError:
+        print()
+        print("Logget out")
 
 
