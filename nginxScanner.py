@@ -27,6 +27,7 @@ def ip(IP):
         req = get("http://{}".format(IP))
     except:
         print("The server is unreachable !")
+        print("The server may not be reachable by IP. \n If so try again with the URL.")
         exit()
     
     try:
