@@ -7,13 +7,12 @@ from sys import argv,exit
 
 def usage():
     print("""
-    Usage: nginxScanner <IP> or <URL>
-    
-    EXAMPLES:
+Usage: nginxScanner <IP> or <URL>
 
-    nginxScanner 192.168.1.1
-    nginxScanner https://www.example.com
-    
+EXAMPLES:
+
+nginxScanner 192.168.1.1
+nginxScanner https://www.example.com
 
     """)
     exit()
@@ -98,8 +97,19 @@ def verify():
 
 
 def banner():
-    pass
-
+    banner = """
+━━━━━━━━━━━━━━━━━━┏━━━┓━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━┃┏━┓┃━━━━━━━━━━━━━━━━━━━━━━━━
+┏━┓━┏━━┓┏┓┏━┓━┏┓┏┓┃┗━━┓┏━━┓┏━━┓━┏━┓━┏━┓━┏━━┓┏━┓
+┃┏┓┓┃┏┓┃┣┫┃┏┓┓┗╋╋┛┗━━┓┃┃┏━┛┗━┓┃━┃┏┓┓┃┏┓┓┃┏┓┃┃┏┛
+┃┃┃┃┃┗┛┃┃┃┃┃┃┃┏╋╋┓┃┗━┛┃┃┗━┓┃┗┛┗┓┃┃┃┃┃┃┃┃┃┃━┫┃┃━
+┗┛┗┛┗━┓┃┗┛┗┛┗┛┗┛┗┛┗━━━┛┗━━┛┗━━━┛┗┛┗┛┗┛┗┛┗━━┛┗┛━
+━━━━┏━┛┃━━━━━━━━━TURKZEN━OzlemBalci━━━━━━━━━━━━
+━━━━┗━━┛━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+https://github.com/TURKZEN/nginxScanner
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    """
+    print(banner)
 
 def Main():
     banner()
