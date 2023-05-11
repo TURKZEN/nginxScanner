@@ -3,10 +3,11 @@
 from requests import get
 from ipaddress import ip_address as ipCheck
 from validators import url as urlCheck
+from colorama import Fore
 from sys import argv,exit
 
 def usage():
-    print("""
+    print(Fore.LIGHTGREEN_EX + """
 Usage: nginxScanner <IP> or <URL>
 
 EXAMPLES:
@@ -27,34 +28,34 @@ def serverParser(serverType):
     try:
         serverType = serverType.split("/")
     except:
-        print("Server type is not Nginx !")
+        print(Fore.RED + "Server type is not Nginx !")
         exit()
     else:
         try:
             serverName = serverType[0]
             serverVersion = serverType[1]
         except:
-            print("Server type is not Nginx !")
+            print(Fore.RED + "Server type is not Nginx !")
             exit()
         else:
             if serverName == "nginx":
                 detectionCVE(serverVersion)
             else:
-                print("Server type is not Nginx !")
+                print(Fore.RED + "Server type is not Nginx !")
                 exit()
 def ip(IP):
     
     try:
         req = get("http://{}".format(IP))
     except:
-        print("The server is unreachable !")
-        print("The server may not be reachable by IP. \n If so try again with the URL.")
+        print(Fore.RED + "The server is unreachable !")
+        print(Fore.RED + "The server may not be reachable by IP. \n If so try again with the URL.")
         exit()
     
     try:
         serverType = req.headers.get("Server")
     except:
-        print("Server type cannot be determined")
+        print(Fore.RED + "Server type cannot be determined")
         exit()
     else:
         serverParser(serverType)
@@ -64,13 +65,13 @@ def url(URL):
     try:
         req = get(URL)
     except:
-        print("The server is unreachable !")
+        print(Fore.RED + "The server is unreachable !")
         exit()
     
     try:
         serverType = req.headers.get("Server")
     except:
-        print("Server type cannot be determined")
+        print(Fore.RED + "Server type cannot be determined")
         exit()
     else:
         serverParser(serverType)
@@ -97,7 +98,7 @@ def verify():
 
 
 def banner():
-    banner = """
+    banner = Fore.LIGHTGREEN_EX + """
 ━━━━━━━━━━━━━━━━━━┏━━━┓━━━━━━━━━━━━━━━━━━━━━━━━
 ━━━━━━━━━━━━━━━━━━┃┏━┓┃━━━━━━━━━━━━━━━━━━━━━━━━
 ┏━┓━┏━━┓┏┓┏━┓━┏┓┏┓┃┗━━┓┏━━┓┏━━┓━┏━┓━┏━┓━┏━━┓┏━┓
@@ -106,9 +107,9 @@ def banner():
 ┗┛┗┛┗━┓┃┗┛┗┛┗┛┗┛┗┛┗━━━┛┗━━┛┗━━━┛┗┛┗┛┗┛┗┛┗━━┛┗┛━
 ━━━━┏━┛┃━━━━━━━━━TURKZEN━OzlemBalci━━━━━━━━━━━━
 ━━━━┗━━┛━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-https://github.com/TURKZEN/nginxScanner
+{}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    """
+    """.format(Fore.LIGHTCYAN_EX +"github.com/TURKZEN/nginxScanner")
     print(banner)
 
 def Main():
@@ -121,9 +122,9 @@ if __name__ == "__main__":
         Main()
     except KeyboardInterrupt:
         print()
-        print("Logget out !")
+        print(Fore.LIGHTYELLOW_EX +"Logget out !")
     except EOFError:
         print()
-        print("Logget out")
+        print(Fore.LIGHTYELLOW_EX +"Logget out")
 
 
