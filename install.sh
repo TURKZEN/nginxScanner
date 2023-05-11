@@ -1,6 +1,6 @@
 # /bin/bash
 
-sudo cp -r ../nginxScanner /opt/
+sudo cp -r nginxScanner.py /opt/nginxScanner
 
 sudo touch /usr/bin/nginxScanner
 
