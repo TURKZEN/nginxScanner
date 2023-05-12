@@ -107,9 +107,9 @@ def banner():
 ┗┛┗┛┗━┓┃┗┛┗┛┗┛┗┛┗┛┗━━━┛┗━━┛┗━━━┛┗┛┗┛┗┛┗┛┗━━┛┗┛━
 {}━━━━┏━┛┃━━━━━━━━━TURKZEN━OzlemBalci━━━━━━━━━━━━
 ━━━━┗━━┛━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-{}
+{}github.com/TURKZEN/nginxScanner
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    """.format(Fore.LIGHTMAGENTA_EX,Fore.LIGHTCYAN_EX +"github.com/TURKZEN/nginxScanner")
+    """.format(Fore.LIGHTMAGENTA_EX,Fore.LIGHTCYAN_EX )
     print(banner)
 
 def Main():
