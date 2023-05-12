@@ -94,7 +94,7 @@ def verify():
         
         IP = argv[1]
     except:
-        if osName == "nt"
+        if osName == "nt":
             winUsage()
         else:
             usage()
@@ -104,7 +104,7 @@ def verify():
     except ValueError:
 
         if not urlCheck(IP):
-            if osName == "nt"
+            if osName == "nt":
                 winUsage()
             else:
                 usage()
