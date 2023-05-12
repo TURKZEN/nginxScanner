@@ -37,17 +37,17 @@ The nginx scanner detects the current nginx version on the web server and detect
 ### [+] Usage
 For Linux :
 
-`nginxScanner <IP> or <URL> `
+- `nginxScanner <IP> or <URL> `
 
 For Termux : 
 
-`cd nginxScanner`
-`python3 nginxScanner.py  <IP> or <URL> `
+- `cd nginxScanner`
+- `python3 nginxScanner.py  <IP> or <URL> `
 
 For Windows :
 
-`cd nginxScanner`
-`python nginxScanner.py  <IP> or <URL> `
+- `cd nginxScanner`
+- `python nginxScanner.py  <IP> or <URL> `
 ### [+] Credits 
  TURKZEN & OzlemBalci
  
