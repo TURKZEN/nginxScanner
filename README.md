@@ -16,15 +16,38 @@
 The nginx scanner detects the current nginx version on the web server and detects the versions CVE
 
 ### [+] Installation
+  For Linux :
  - `git clone https://github.com/TURKZEN/nginxScanner`
  - `cd nginxScanner`
  - `chmod +x install.sh`
   - `./install.sh`
 
+  For Termux : 
+
+  - `git clone https://github.com/TURKZEN/nginxScanner`
+  - `cd nginxScanner`
+  - `pip3 install -r requirements.txt`
+
+  For Windows :
+
+  - `git clone https://github.com/TURKZEN/nginxScanner`
+  - `cd nginxScanner`
+  - `pip3 install -r requirements.txt`
 
 ### [+] Usage
+For Linux :
+
 `nginxScanner <IP> or <URL> `
 
+For Termux : 
+
+`cd nginxScanner`
+`python3 nginxScanner.py  <IP> or <URL> `
+
+For Windows :
+
+`cd nginxScanner`
+`python nginxScanner.py  <IP> or <URL> `
 ### [+] Credits 
  TURKZEN & OzlemBalci
  

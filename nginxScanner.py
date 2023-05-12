@@ -5,6 +5,7 @@ from ipaddress import ip_address as ipCheck
 from validators import url as urlCheck
 from colorama import Fore
 from sys import argv,exit
+from os import name as osName
 
 def usage():
     print(Fore.LIGHTGREEN_EX + """
@@ -14,6 +15,18 @@ EXAMPLES:
 
 nginxScanner 192.168.1.1
 nginxScanner https://www.example.com
+
+    """)
+    exit()
+
+def winUsage():
+    print(Fore.LIGHTGREEN_EX + """
+Usage: python nginxScanner <IP> or <URL>
+
+EXAMPLES:
+
+python nginxScanner 192.168.1.1
+python nginxScanner https://www.example.com
 
     """)
     exit()
@@ -81,14 +94,20 @@ def verify():
         
         IP = argv[1]
     except:
-        usage()
+        if osName == "nt"
+            winUsage()
+        else:
+            usage()
     try:
         ipCheck(IP)
 
     except ValueError:
 
         if not urlCheck(IP):
-            usage()
+            if osName == "nt"
+                winUsage()
+            else:
+                usage()
         else:
             URL = IP
             url(URL)
