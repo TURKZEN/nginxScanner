@@ -52,6 +52,8 @@ def serverParser(serverType):
             exit()
         else:
             if serverName == "nginx":
+                serverVersion = serverVersion.split(" ")
+                serverVersion = serverVersion[0]
                 detectionCVE(serverVersion)
             else:
                 print(Fore.RED + "Server type is not Nginx !")
