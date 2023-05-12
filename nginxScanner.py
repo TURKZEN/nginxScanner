@@ -33,8 +33,9 @@ python nginxScanner https://www.example.com
 
 def detectionCVE(serverVersion):
     
-    print(serverVersion)
-
+    print(Fore.RESET + "Server : ",Fore.RED,argv[1])
+    print(Fore.RESET +  "Nginx Version : ",Fore.RED,serverVersion)
+    print(Fore.RESET)
 def serverParser(serverType):
     
     serverType = str(serverType)
@@ -52,9 +53,13 @@ def serverParser(serverType):
             exit()
         else:
             if serverName == "nginx":
+                
                 serverVersion = serverVersion.split(" ")
                 serverVersion = serverVersion[0]
+
                 detectionCVE(serverVersion)
+                
+                
             else:
                 print(Fore.RED + "Server type is not Nginx !")
                 exit()
