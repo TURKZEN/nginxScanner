@@ -4,6 +4,7 @@ from requests import get
 from ipaddress import ip_address as ipCheck
 from validators import url as urlCheck
 from colorama import Fore
+from CVEs import CVEs
 from sys import argv,exit
 from os import name as osName
 
@@ -31,11 +32,41 @@ python nginxScanner https://www.example.com
     """)
     exit()
 
-def detectionCVE(serverVersion):
-    
+def serverPrint(serverVersion):
     print(Fore.RESET + "Server : ",Fore.RED,argv[1])
     print(Fore.RESET +  "Nginx Version : ",Fore.RED,serverVersion)
     print(Fore.RESET)
+
+
+def cvePrint(cveCounter,cveList):
+
+    
+
+    if cveCounter == 0:
+        print(Fore.RED + "No CVE found!")
+    else:
+        print(Fore.LIGHTYELLOW_EX + "{}".format(cveCounter) ,Fore.RESET + "CVE Found !")
+        print()
+
+        for cve in cveList:
+            print(cve)
+
+def detectionCVE(serverVersion):
+
+    cveCounter = 0
+    cveList = []
+
+    for CVE in CVEs:
+
+        if serverVersion == CVE:
+
+            cveCounter += 1
+
+            cveList.append(CVEs[CVE])
+
+    serverPrint(serverVersion)
+    cvePrint(cveCounter,cveList)
+
 def serverParser(serverType):
     
     serverType = str(serverType)
@@ -154,5 +185,7 @@ if __name__ == "__main__":
         print()
         print(Fore.LIGHTYELLOW_EX +"Logget out")
         exit()
+    except:
+        print(Fore.RED+"ERROR !")
 
 
