@@ -149,8 +149,10 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print()
         print(Fore.LIGHTYELLOW_EX +"Logget out !")
+        exit()
     except EOFError:
         print()
         print(Fore.LIGHTYELLOW_EX +"Logget out")
+        exit()
 
 
