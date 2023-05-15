@@ -100,9 +100,10 @@ def ip(IP):
         print(Fore.RED + "The server may not be reachable by IP. \n If so try again with the URL.")
         exit()
     
-    try:
-        serverType = req.headers.get("Server")
-    except:
+    
+    serverType = req.headers.get("Server")
+
+    if serverType == None:
         print(Fore.RED + "Server type cannot be determined")
         exit()
     else:
@@ -116,9 +117,10 @@ def url(URL):
         print(Fore.RED + "The server is unreachable !")
         exit()
     
-    try:
-        serverType = req.headers.get("Server")
-    except:
+    
+    serverType = req.headers.get("Server")
+
+    if serverType == None:
         print(Fore.RED + "Server type cannot be determined")
         exit()
     else:
