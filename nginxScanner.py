@@ -70,30 +70,27 @@ def detectionCVE(serverVersion):
 def serverParser(serverType):
     
     serverType = str(serverType)
+    
+    serverType = serverType.split("/")
+    
     try:
-        serverType = serverType.split("/")
-    except:
+        serverName = serverType[0]
+        serverVersion = serverType[1]
+    except IndexError:
         print(Fore.RED + "Server type is not Nginx !")
         exit()
     else:
-        try:
-            serverName = serverType[0]
-            serverVersion = serverType[1]
-        except:
+        if serverName == "nginx":
+            
+            serverVersion = serverVersion.split(" ")
+            serverVersion = serverVersion[0]
+
+            detectionCVE(serverVersion)
+            
+            
+        else:
             print(Fore.RED + "Server type is not Nginx !")
             exit()
-        else:
-            if serverName == "nginx":
-                
-                serverVersion = serverVersion.split(" ")
-                serverVersion = serverVersion[0]
-
-                detectionCVE(serverVersion)
-                
-                
-            else:
-                print(Fore.RED + "Server type is not Nginx !")
-                exit()
 def ip(IP):
     
     try:
