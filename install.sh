@@ -4,6 +4,8 @@ sudo mkdir /opt/nginxScanner
 
 sudo cp  nginxScanner.py /opt/nginxScanner/
 
+sudo cp  CVEs.py /opt/nginxScanner/
+
 sudo touch /usr/bin/nginxScanner
 
 sudo chmod 777 /usr/bin/nginxScanner

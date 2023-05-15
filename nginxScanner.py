@@ -185,7 +185,6 @@ if __name__ == "__main__":
         print()
         print(Fore.LIGHTYELLOW_EX +"Logget out")
         exit()
-    except:
-        print(Fore.RED+"ERROR !")
+
 
 
