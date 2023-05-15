@@ -1,6 +1,6 @@
 #! /usr/bin/python3
 
-from requests import get
+import requests
 from ipaddress import ip_address as ipCheck
 from validators import url as urlCheck
 from colorama import Fore
@@ -94,8 +94,8 @@ def serverParser(serverType):
 def ip(IP):
     
     try:
-        req = get("http://{}".format(IP))
-    except:
+        req = requests.get("http://{}".format(IP))
+    except requests.exceptions.RequestException:
         print(Fore.RED + "The server is unreachable !")
         print(Fore.RED + "The server may not be reachable by IP. \n If so try again with the URL.")
         exit()
@@ -112,8 +112,8 @@ def ip(IP):
 def url(URL):
     
     try:
-        req = get(URL)
-    except:
+        req = requests.get(URL)
+    except requests.exceptions.RequestException:
         print(Fore.RED + "The server is unreachable !")
         exit()
     
