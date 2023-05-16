@@ -55,15 +55,14 @@ def cvePrint(cveCounter,cveList):
 def detectionCVE(serverVersion):
 
     cveCounter = 0
-    cveList = []
-
+   
     for cveVersion in CVEs:
-
+        
         if serverVersion == cveVersion:
-
-            cveCounter += 1
-
-            cveList.append(CVEs[cveVersion])
+            
+            cveCounter = len(CVEs.values())
+     
+            cveList = CVEs[cveVersion]
 
     serverPrint(serverVersion)
     cvePrint(cveCounter,cveList)
