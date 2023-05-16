@@ -49,20 +49,21 @@ def cvePrint(cveCounter,cveList):
         print()
 
         for cve in cveList:
-            print(cve)
+            print(Fore.LIGHTMAGENTA_EX+cve)
+            print(Fore.RESET)
 
 def detectionCVE(serverVersion):
 
     cveCounter = 0
     cveList = []
 
-    for CVE in CVEs:
+    for cveVersion in CVEs:
 
-        if serverVersion == CVE:
+        if serverVersion == cveVersion:
 
             cveCounter += 1
 
-            cveList.append(CVEs[CVE])
+            cveList.append(CVEs[cveVersion])
 
     serverPrint(serverVersion)
     cvePrint(cveCounter,cveList)
