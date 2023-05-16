@@ -197,14 +197,27 @@ NNWWNNNWWWNNWWNNNWMN0ko:,,;lkXNNNWWWNNWWWXNWWNNNWW
     
     print(banner)
 
+def banner3():
+    banner = Fore.LIGHTYELLOW_EX + """
+_  _ ____ _ _  _ _  _ ____ ____ ____ _  _ _  _ ____ ____ 
+|\ | | __ | |\ |  \/  [__  |    |__| |\ | |\ | |___ |__/ 
+| \| |__] | | \| _/\_ ___] |___ |  | | \| | \| |___ |  \ 
+                                                         
+{}              TURKZEN & OzlemBalci                                                   
+{}          github.com/TURKZEN/nginxScanner
+    """.format(Fore.LIGHTCYAN_EX,Fore.GREEN)
+    print(banner)
+
 def randomBanner():
-    bannerList = [1,2]
+    bannerList = [1,2,3]
     bannerChoice = choice(bannerList)
     
     if bannerChoice == 1:
         banner()
     elif bannerChoice == 2:
         banner2()
+    elif bannerChoice == 3:
+        banner3()
     else:
         pass
 
