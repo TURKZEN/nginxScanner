@@ -61,13 +61,15 @@ def detectionCVE(serverVersion):
             cveCounter = len(CVEs[cveVersion])
             
             cveList = CVEs[cveVersion]
-        else:
-            serverPrint(serverVersion)
-            print(Fore.RED + "No CVE found!")
-            exit()
-            
+    
+
+
     serverPrint(serverVersion)
-    cvePrint(cveCounter,cveList)
+    
+    try:
+        cvePrint(cveCounter,cveList)
+    except UnboundLocalError:
+        print(Fore.RED + "No CVE found!")
 
 def serverParser(serverType):
     
