@@ -7,6 +7,7 @@ from colorama import Fore
 from CVEs import CVEs
 from sys import argv,exit
 from os import name as osName
+from random import choice
 
 def usage():
     print(Fore.LIGHTGREEN_EX + """
@@ -65,7 +66,7 @@ def detectionCVE(serverVersion):
 
 
     serverPrint(serverVersion)
-    
+
     try:
         cvePrint(cveCounter,cveList)
     except UnboundLocalError:
@@ -172,8 +173,43 @@ def banner():
     """.format(Fore.LIGHTMAGENTA_EX,Fore.LIGHTCYAN_EX )
     print(banner)
 
+def banner2():
+    banner =Fore.CYAN +"""
+WWNNWWWNNNWWNNWWWNNNWN0xoodOXNWWWNNNWWNNWWWNNWWWNN
+NNNNNNNNWWNNNWWWNNKkd:'....';lkKNWNNWWNNWNWWWWNNNN
+NNWWNNNWWWNNWWXOdl;............,cx0XNNWWWNNWWWNNWW
+WWNNWWWNNNWNOo:'..''..........''..':oOKNNWWNNNWWNN
+NNWWWNNWWWNx,...,dK0xc'......:kOo'...,xWWNNWWWNNWW
+WWNNWWWNNWWk,...;ONWWXx;.....oXWO;...'dNNWWNNWWWNN
+NWWWWWWNWWNx'...;0NNKKNKo:'..oXWO;...'dNNNWWNWWWWW
+NNWWWNNWWWNx'...;0WXl:kNNKOc'oXNO;...'xNWNNWWWNNWW
+WWNNWWWNNWWk,...:ONXl.'c0NNXkkNWO;...'dXWWWNNWWWNN
+NNWWNNNWWWNx'...:0WXl...,:oKWWNNk;...'xWWNNWWWNNWW
+WWNNWWWNNNWk'...;kNKc......:xKNNk,...'dNWWWNNWWWNN
+NNNNNNWNWWN0o;'..;c:'.......';cc;...,l0NNWNNNWNNNW
+NNWWWNNWWNNNNXOd:'..............':okKNWWNNNWWNNNWW
+WWNNNWWNNWWWNNWWN0xc;........,cx0KXWWWNNNWWNNWWWNN
+NNWWNNNWWWNNWWNNNWMN0ko:,,;lkXNNNWWWNNWWWXNWWNNNWW
+                   
+{}          TURKZEN & OzlemBalci
+{}      github.com/TURKZEN/nginxScanner
+    """.format(Fore.LIGHTMAGENTA_EX,Fore.LIGHTCYAN_EX )
+    
+    print(banner)
+
+def randomBanner():
+    bannerList = [1,2]
+    bannerChoice = choice(bannerList)
+    
+    if bannerChoice == 1:
+        banner()
+    elif bannerChoice == 2:
+        banner2()
+    else:
+        pass
+
 def Main():
-    banner()
+    randomBanner()
     verify()
     
 
