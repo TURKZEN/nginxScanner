@@ -40,8 +40,6 @@ def serverPrint(serverVersion):
 
 def cvePrint(cveCounter,cveList):
 
-    
-
     if cveCounter == 0:
         print(Fore.RED + "No CVE found!")
     else:
@@ -60,8 +58,8 @@ def detectionCVE(serverVersion):
         
         if serverVersion == cveVersion:
             
-            cveCounter = len(CVEs.values())
-     
+            cveCounter = len(CVEs[cveVersion])
+            
             cveList = CVEs[cveVersion]
 
     serverPrint(serverVersion)
