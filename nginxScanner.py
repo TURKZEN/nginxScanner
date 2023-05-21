@@ -4,7 +4,6 @@ import requests
 from ipaddress import ip_address as ipCheck
 from validators import url as urlCheck
 from colorama import Fore
-from CVEs import CVEs
 from sys import argv,exit
 from os import name as osName
 from random import choice
@@ -38,39 +37,8 @@ def serverPrint(serverVersion):
     print(Fore.RESET +  "Nginx Version : ",Fore.RED,serverVersion)
     print(Fore.RESET)
 
-
-def cvePrint(cveCounter,cveList):
-
-    if cveCounter == 0:
-        print(Fore.RED + "No CVE found!")
-    else:
-        print(Fore.LIGHTYELLOW_EX + "{}".format(cveCounter) ,Fore.RESET + "CVE Found !")
-        print()
-
-        for cve in cveList:
-            print(Fore.LIGHTMAGENTA_EX+cve)
-            print(Fore.RESET)
-
-def detectionCVE(serverVersion):
-
-    cveCounter = 0
-   
-    for cveVersion in CVEs:
-        
-        if serverVersion == cveVersion:
-            
-            cveCounter = len(CVEs[cveVersion])
-            
-            cveList = CVEs[cveVersion]
-    
-
-
-    serverPrint(serverVersion)
-
-    try:
-        cvePrint(cveCounter,cveList)
-    except UnboundLocalError:
-        print(Fore.RED + "No CVE found!")
+def cveDetection(major,minor,micro):
+    pass
 
 def serverParser(serverType):
     
@@ -90,8 +58,15 @@ def serverParser(serverType):
             serverVersion = serverVersion.split(" ")
             serverVersion = serverVersion[0]
 
-            detectionCVE(serverVersion)
+            serverPrint(serverVersion)
+
+            serverVersion = serverVersion.split(".")
             
+            major = serverVersion[0]
+            minor = serverVersion[1]
+            micro = serverVersion[2]
+
+            cveDetection(major,minor,micro)
             
         else:
             print(Fore.RED + "Server type is not Nginx !")
