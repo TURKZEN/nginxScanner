@@ -38,7 +38,20 @@ def serverPrint(serverVersion):
     print(Fore.RESET)
 
 def cveDetection(major,minor,micro):
-    pass
+# ----------------CVE-2022-41741 - START----------------
+    if major == 1 and minor == 23 and micro == 1:
+        print("CVE-2022-41741")
+    if major == 1 and minor < 23:
+        if minor == 22 and micro >= 1:
+            pass
+
+        else:
+            print("CVE-2022-41741")
+    
+# ----------------CVE-2022-41741 - END ----------------
+
+    else:
+        print(Fore.RED + "No CVE Found !")
 
 def serverParser(serverType):
     
