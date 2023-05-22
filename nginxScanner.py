@@ -15,6 +15,7 @@ Usage: nginxScanner <IP> or <URL>
 EXAMPLES:
 
 nginxScanner 192.168.1.1
+nginxScanner http://172.16.204.131/
 nginxScanner https://example.com
 
     """)
@@ -27,6 +28,7 @@ Usage: python nginxScanner <IP> or <URL>
 EXAMPLES:
 
 python nginxScanner 192.168.1.1
+python nginxScanner http://172.16.204.131/
 python nginxScanner https://example.com
 
     """)
