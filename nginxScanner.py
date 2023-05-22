@@ -3,7 +3,7 @@
 import requests
 from ipaddress import ip_address as ipCheck
 from validators import url as urlCheck
-from colorama import Fore
+from colorama import Fore,Back
 from sys import argv,exit
 from os import name as osName
 from random import choice
@@ -44,10 +44,13 @@ def serverPrint(serverVersion):
 def cvePrint(cveList,cveCount):
     
     print(Fore.LIGHTYELLOW_EX,cveCount,Fore.RESET, "CVE Found ! ")
-    
+    print()
     for cve in cveList:
-        print(cve)
+        print(Fore.LIGHTMAGENTA_EX+cve)
         
+        print()
+        
+    print()
 def cveDetection(major,minor,micro):
     cveList = list()
     
