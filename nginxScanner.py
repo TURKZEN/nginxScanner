@@ -3,7 +3,7 @@
 import requests
 from ipaddress import ip_address as ipCheck
 from validators import url as urlCheck
-from colorama import Fore,Back
+from colorama import Fore
 from sys import argv,exit
 from os import name as osName
 from random import choice
