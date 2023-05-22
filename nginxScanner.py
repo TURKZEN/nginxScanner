@@ -34,25 +34,36 @@ python nginxScanner https://example.com
     """)
     exit()
 
+
+
 def serverPrint(serverVersion):
     print(Fore.RESET + "Server : ",Fore.RED,argv[1])
     print(Fore.RESET +  "Nginx Version : ",Fore.RED,serverVersion)
     print(Fore.RESET)
 
+def cvePrint(cveList,cveCount):
+    
+    print(Fore.LIGHTYELLOW_EX,cveCount,Fore.RESET, "CVE Found ! ")
+    
+    for cve in cveList:
+        print(cve)
+        
 def cveDetection(major,minor,micro):
+    cveList = list()
+    
 # ----------------CVE-2022-41741 - START----------------
     
     if major == 1 and minor == 23 and micro == 1:
-        print("CVE-2022-41741")
+        cveList.append("CVE-2022-41741")
     elif major == 1 and minor < 23:
         if minor == 22 and micro >= 1:
             print(Fore.RED + "No CVE Found !")
         elif minor == 1 and micro >= 3:
-            print("CVE-2022-41741")
+            cveList.append("CVE-2022-41741")
         elif minor >= 1:
-            print("CVE-2022-41741")
+            cveList.append("CVE-2022-41741")
         elif minor == 0 and micro>=7 and micro <=15:
-            print("CVE-2022-41741")
+            cveList.append("CVE-2022-41741")
         else:
             print(Fore.RED + "No CVE Found !")
 # ----------------CVE-2022-41741 - END ----------------
@@ -61,9 +72,13 @@ def cveDetection(major,minor,micro):
 
 
 # ----------------CVE-2022-41742- END----------------
-
+    
     else:
         print(Fore.RED + "No CVE Found !")
+
+    cveCount = len(cveList)
+
+    cvePrint(cveList,cveCount)
 
 def serverParser(serverType):
     
