@@ -43,12 +43,21 @@ def cveDetection(major,minor,micro):
         print("CVE-2022-41741")
     if major == 1 and minor < 23:
         if minor == 22 and micro >= 1:
-            pass
-
-        else:
+            print(Fore.RED + "No CVE Found !")
+        if minor == 1 and micro >= 3:
             print("CVE-2022-41741")
-    
+        if minor >= 1:
+            print("CVE-2022-41741")
+        if minor == 0 and micro>=7 and micro <=15:
+            print("CVE-2022-41741")
+        else:
+            print(Fore.RED + "No CVE Found !")
 # ----------------CVE-2022-41741 - END ----------------
+
+# ----------------CVE-2022-41742- START----------------
+
+
+# ----------------CVE-2022-41742- END----------------
 
     else:
         print(Fore.RED + "No CVE Found !")
