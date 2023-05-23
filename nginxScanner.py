@@ -34,6 +34,9 @@ python nginxScanner https://example.com
     """)
     exit()
 
+def noCVE():
+    print(Fore.RED + "No CVE Found !")
+    quit()
 
 
 def serverPrint(serverVersion):
@@ -42,19 +45,18 @@ def serverPrint(serverVersion):
     print(Fore.RESET)
 
 def cvePrint(cveList,cveCount):
-    
-    print(Fore.LIGHTYELLOW_EX,cveCount,Fore.RESET, "CVE Found ! ")
-    print()
-    for cve in cveList:
-        print(Fore.LIGHTMAGENTA_EX+cve)
-        
+    if cveCount == 0:
+        noCVE()
+    else:
+        print(Fore.LIGHTYELLOW_EX,cveCount,Fore.RESET, "CVE Found ! ")
         print()
-        
-    print()
+        for cve in cveList:
+            print(Fore.LIGHTMAGENTA_EX+cve)
+            
+            print()
+            
+        print()
 
-def noCVE():
-    print(Fore.RED + "No CVE Found !")
-    quit()
 
 def cveDetection(major,minor,micro):
     cveList = list()
