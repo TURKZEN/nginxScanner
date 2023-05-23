@@ -109,8 +109,20 @@ def cveDetection(major,minor,micro):
 
 # ----------------CVE-2021-23017- END----------------
 
+
+# ----------------CVE-2019-9511- START----------------
+    if major == 1 and minor == 17 and micro == 2 or micro == 1:
+        cveList.append("CVE-2019-9511")
+    elif major == 1 and minor <= 17 and minor >= 9:
+        if minor == 9 and micro >= 5:
+            cveList.append("CVE-2019-9511")
+        else:
+            cveList.append("CVE-2019-9511")
+
+# ----------------CVE-2019-9511- END----------------
+
     else:
-        noCVE()
+        pass
 
     cveCount = len(cveList)
 
