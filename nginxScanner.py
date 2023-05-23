@@ -73,8 +73,7 @@ def cveDetection(major,minor,micro):
             cveList.append("CVE-2022-41741")
         elif minor == 0 and micro>=7 and micro <=15:
             cveList.append("CVE-2022-41741")
-        else:
-            pass
+     
 # ----------------CVE-2022-41741 - END ----------------
 
 # ----------------CVE-2022-41742- START----------------
@@ -89,11 +88,25 @@ def cveDetection(major,minor,micro):
             cveList.append("CVE-2022-41742")
         elif minor == 0 and micro>=7 and micro <=15:
             cveList.append("CVE-2022-41742")
-        else:
-            pass
+    
 
 # ----------------CVE-2022-41742- END----------------
+
+# ----------------CVE-2021-23017- START----------------
+    if major == 1 and minor == 20 and micro == 0:
+        cveList.append("CVE-2021-23017")
+    elif major == 1:
+        if minor < 20:
+            cveList.append("CVE-2021-23017")
+    elif major == 0:
+        if minor == 6 and micro == 18:
+            cveList.append("CVE-2021-23017")
+        elif minor >= 6:
+            cveList.append("CVE-2021-23017")
     
+
+# ----------------CVE-2021-23017- END----------------
+
     else:
         noCVE()
 
