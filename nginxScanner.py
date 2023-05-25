@@ -44,108 +44,168 @@ def serverPrint(serverVersion):
     print(Fore.RESET +  "Nginx Version : ",Fore.RED,serverVersion)
     print(Fore.RESET)
 
-def cvePrint(cveList,cveCount):
+def cvePrint(cveList,cveCount,severity,mitreList):
     if cveCount == 0:
         noCVE()
     else:
         print(Fore.LIGHTYELLOW_EX,cveCount,Fore.RESET, "CVE Found ! ")
         print()
-        for cve in cveList:
-            print(Fore.LIGHTMAGENTA_EX+cve)
-            
+        for cve in zip(cveList,severity,mitreList):
+            CVE = cve[0]
+            SEVERİTY = cve[1]
+            MITRE = cve[2]
+
+            print(Fore.LIGHTMAGENTA_EX + CVE,end="")
+            if SEVERİTY == "HIGH":
+                print(" | ",Fore.RED +SEVERİTY)
+            elif SEVERİTY == "MEDIUM":
+                print(" | ",Fore.YELLOW +SEVERİTY)
+            else:
+                print(" | ",Fore.WHITE +SEVERİTY)
+            print(Fore.CYAN + MITRE)
             print()
             
+         
         print()
 
 
 def cveDetection(major,minor,micro):
     cveList = list()
-
+    severity = list()
+    mitreList = list()
     
 # ----------------CVE-2022-41741 - START----------------
     if major == 1 and minor == 23 and micro == 1:
         cveList.append("CVE-2022-41741")
+        severity.append("HIGH")
+        mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41741")
     elif major == 1 and minor < 23:
         if minor == 22 and micro >= 1:
             pass
         elif minor == 1 and micro >= 3:
             cveList.append("CVE-2022-41741")
+            severity.append("HIGH")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41741")
         elif minor >= 1:
             cveList.append("CVE-2022-41741")
+            severity.append("HIGH")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41741")
         elif minor == 0 and micro>=7 and micro <=15:
-            cveList.append("CVE-2022-41741")    
+            cveList.append("CVE-2022-41741")
+            severity.append("HIGH")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41741")    
 # ----------------CVE-2022-41741 - END ----------------
 
 # ----------------CVE-2022-41742- START----------------
     if major == 1 and minor == 23 and micro == 1:
         cveList.append("CVE-2022-41742")
+        severity.append("HIGH")
+        mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41741")
     elif major == 1 and minor < 23:
         if minor == 22 and micro >= 1:
             pass
         elif minor == 1 and micro >= 3:
             cveList.append("CVE-2022-41742")
+            severity.append("HIGH")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41741")
         elif minor >= 1:
             cveList.append("CVE-2022-41742")
+            severity.append("HIGH")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41741")
         elif minor == 0 and micro>=7 and micro <=15:
             cveList.append("CVE-2022-41742")
+            severity.append("HIGH")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41741")
 # ----------------CVE-2022-41742- END----------------
 
 # ----------------CVE-2021-23017- START----------------
     if major == 1 and minor == 20 and micro == 0:
         cveList.append("CVE-2021-23017")
+        severity.append("HIGH")
+        mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23017")
     elif major == 1:
         if minor < 20:
             cveList.append("CVE-2021-23017")
+            severity.append("HIGH")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23017")
     elif major == 0:
         if minor == 6 and micro == 18:
             cveList.append("CVE-2021-23017")
+            severity.append("HIGH")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23017")
         elif minor >= 6:
             cveList.append("CVE-2021-23017")
+            severity.append("HIGH")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23017")
 # ----------------CVE-2021-23017- END----------------
 
 
 # ----------------CVE-2019-9511- START----------------
     if major == 1 and minor == 17 and (micro == 2 or micro == 1):
         cveList.append("CVE-2019-9511")
+        severity.append("HIGH")
+        mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9511")
     elif major == 1 and minor <= 17 and minor >= 9:
         if minor == 9 and micro >= 5:
             cveList.append("CVE-2019-9511")
+            severity.append("HIGH")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9511")
         elif minor == 16 and micro == 0:
             cveList.append("CVE-2019-9511")
+            severity.append("HIGH")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9511")
         elif minor == 16 and micro >= 1:
             pass
         else:
             cveList.append("CVE-2019-9511")
+            severity.append("HIGH")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9511")
 # ----------------CVE-2019-9511- END----------------
 
 
 # ----------------CVE-2019-9513- START----------------
     if major == 1 and minor == 17 and (micro == 2 or micro == 1):
         cveList.append("CVE-2019-9513")
+        severity.append("HIGH")
+        mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9513")
     elif major == 1 and minor <= 17 and minor >= 9:
         if minor == 9 and micro >= 5:
             cveList.append("CVE-2019-9513")
+            severity.append("HIGH")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9513")
         elif minor == 16 and micro == 0:
             cveList.append("CVE-2019-9513")
+            severity.append("HIGH")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9513")
         elif minor == 16 and micro >= 1:
             pass
         else:
             cveList.append("CVE-2019-9513")
+            severity.append("HIGH")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9513")
 # ----------------CVE-2019-9513- END----------------
 
 
 # ----------------CVE-2019-9516- START----------------
     if major == 1 and minor == 17 and (micro == 2 or micro == 1):
         cveList.append("CVE-2019-9516")
+        severity.append("MEDIUM")
+        mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-CVE-2019-9516")
     elif major == 1 and minor <= 17 and minor >= 9:
         if minor == 9 and micro >= 5:
             cveList.append("CVE-2019-9516")
+            severity.append("MEDIUM")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-CVE-2019-9516")
         elif minor == 16 and micro == 0:
             cveList.append("CVE-2019-9516")
+            severity.append("MEDIUM")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-CVE-2019-9516")
         elif minor == 16 and micro >= 1:
             pass
         else:
             cveList.append("CVE-2019-9516")
+            severity.append("MEDIUM")
+            mitreList.append("https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-CVE-2019-9516")
 # ----------------CVE-2019-9516- END----------------
 
     else:
@@ -153,7 +213,7 @@ def cveDetection(major,minor,micro):
 
     cveCount = len(cveList)
 
-    cvePrint(cveList,cveCount)
+    cvePrint(cveList,cveCount,severity,mitreList)
 
 def serverParser(serverType):
     
