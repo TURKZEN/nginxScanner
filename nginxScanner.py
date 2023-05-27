@@ -308,20 +308,6 @@ def verify():
         ip(IP)
 
 
-def banner():
-    banner = Fore.LIGHTGREEN_EX + """
-━━━━━━━━━━━━━━━━━━┏━━━┓━━━━━━━━━━━━━━━━━━━━━━━━
-━━━━━━━━━━━━━━━━━━┃┏━┓┃━━━━━━━━━━━━━━━━━━━━━━━━
-┏━┓━┏━━┓┏┓┏━┓━┏┓┏┓┃┗━━┓┏━━┓┏━━┓━┏━┓━┏━┓━┏━━┓┏━┓
-┃┏┓┓┃┏┓┃┣┫┃┏┓┓┗╋╋┛┗━━┓┃┃┏━┛┗━┓┃━┃┏┓┓┃┏┓┓┃┏┓┃┃┏┛
-┃┃┃┃┃┗┛┃┃┃┃┃┃┃┏╋╋┓┃┗━┛┃┃┗━┓┃┗┛┗┓┃┃┃┃┃┃┃┃┃┃━┫┃┃━
-┗┛┗┛┗━┓┃┗┛┗┛┗┛┗┛┗┛┗━━━┛┗━━┛┗━━━┛┗┛┗┛┗┛┗┛┗━━┛┗┛━
-{}━━━━┏━┛┃━━━━━━━━━TURKZEN━OzlemBalci━━━━━━━━━━━━
-━━━━┗━━┛━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-{}github.com/TURKZEN/nginxScanner
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    """.format(Fore.LIGHTMAGENTA_EX,Fore.LIGHTCYAN_EX )
-    print(banner)
 
 def banner2():
     banner =Fore.CYAN +"""
@@ -347,7 +333,7 @@ NNWWNNNWWWNNWWNNNWMN0ko:,,;lkXNNNWWWNNWWWXNWWNNNWW
     
     print(banner)
 
-def banner3():
+def banner():
     banner = Fore.LIGHTYELLOW_EX + """
 _  _ ____ _ _  _ _  _ ____ ____ ____ _  _ _  _ ____ ____ 
 |\ | | __ | |\ |  \/  [__  |    |__| |\ | |\ | |___ |__/ 
@@ -359,15 +345,14 @@ _  _ ____ _ _  _ _  _ ____ ____ ____ _  _ _  _ ____ ____
     print(banner)
 
 def randomBanner():
-    bannerList = [1,2,3]
+    bannerList = [1,2]
     bannerChoice = choice(bannerList)
     
     if bannerChoice == 1:
         banner()
     elif bannerChoice == 2:
         banner2()
-    elif bannerChoice == 3:
-        banner3()
+
     else:
         pass
 
