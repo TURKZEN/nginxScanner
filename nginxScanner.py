@@ -3,7 +3,7 @@
 import requests
 from ipaddress import ip_address as ipCheck
 from validators import url as urlCheck
-from colorama import Fore
+from colorama import Fore,Style
 from sys import argv,exit
 from os import name as osName
 from random import choice
@@ -310,38 +310,38 @@ def verify():
 
 
 def banner2():
-    banner =Fore.CYAN +"""
-WWNNWWWNNNWWNNWWWNNNWN0xoodOXNWWWNNNWWNNWWWNNWWWNN
-NNNNNNNNWWNNNWWWNNKkd:'....';lkKNWNNWWNNWNWWWWNNNN
-NNWWNNNWWWNNWWXOdl;............,cx0XNNWWWNNWWWNNWW
-WWNNWWWNNNWNOo:'..''..........''..':oOKNNWWNNNWWNN
-NNWWWNNWWWNx,...,dK0xc'......:kOo'...,xWWNNWWWNNWW
-WWNNWWWNNWWk,...;ONWWXx;.....oXWO;...'dNNWWNNWWWNN
-NWWWWWWNWWNx'...;0NNKKNKo:'..oXWO;...'dNNNWWNWWWWW
-NNWWWNNWWWNx'...;0WXl:kNNKOc'oXNO;...'xNWNNWWWNNWW
-WWNNWWWNNWWk,...:ONXl.'c0NNXkkNWO;...'dXWWWNNWWWNN
-NNWWNNNWWWNx'...:0WXl...,:oKWWNNk;...'xWWNNWWWNNWW
-WWNNWWWNNNWk'...;kNKc......:xKNNk,...'dNWWWNNWWWNN
-NNNNNNWNWWN0o;'..;c:'.......';cc;...,l0NNWNNNWNNNW
-NNWWWNNWWNNNNXOd:'..............':okKNWWNNNWWNNNWW
-WWNNNWWNNWWWNNWWN0xc;........,cx0KXWWWNNNWWNNWWWNN
-NNWWNNNWWWNNWWNNNWMN0ko:,,;lkXNNNWWWNNWWWXNWWNNNWW
+    banner =Style.BRIGHT  +"""
+{}    WWNNWWWNNNWWNNWWWNNNWN0xoodOXNWWWNNNWWNNWWWNNWWWNN
+    NNNNNNNNWWNNNWWWNNKkd:'....';lkKNWNNWWNNWNWWWWNNNN
+    NNWWNNNWWWNNWWXOdl;............,cx0XNNWWWNNWWWNNWW
+    WWNNWWWNNNWNOo:'..''..........''..':oOKNNWWNNNWWNN
+{}    NNWWWNNWWWNx,...,dK0xc'......:kOo'...,xWWNNWWWNNWW
+    WWNNWWWNNWWk,...;ONWWXx;.....oXWO;...'dNNWWNNWWWNN
+    NWWWWWWNWWNx'...;0NNKKNKo:'..oXWO;...'dNNNWWNWWWWW
+    NNWWWNNWWWNx'...;0WXl:kNNKOc'oXNO;...'xNWNNWWWNNWW
+    WWNNWWWNNWWk,...:ONXl.'c0NNXkkNWO;...'dXWWWNNWWWNN
+    NNWWNNNWWWNx'...:0WXl...,:oKWWNNk;...'xWWNNWWWNNWW
+    WWNNWWWNNNWk'...;kNKc......:xKNNk,...'dNWWWNNWWWNN
+    NNNNNNWNWWN0o;'..;c:'.......';cc;...,l0NNWNNNWNNNW
+{}    NNWWWNNWWNNNNXOd:'..............':okKNWWNNNWWNNNWW
+    WWNNNWWNNWWWNNWWN0xc;........,cx0KXWWWNNNWWNNWWWNN
+    NNWWNNNWWWNNWWNNNWMN0ko:,,;lkXNNNWWWNNWWWXNWWNNNWW
                    
-{}          TURKZEN & OzlemBalci
-{}      github.com/TURKZEN/nginxScanner
-    """.format(Fore.LIGHTMAGENTA_EX,Fore.LIGHTCYAN_EX )
+        {}          TURKZEN & OzlemBalci
+        {}      github.com/TURKZEN/nginxScanner
+    """.format(Fore.CYAN,Fore.GREEN,Fore.CYAN,Fore.LIGHTMAGENTA_EX,Fore.LIGHTCYAN_EX )
     
     print(banner)
 
 def banner():
-    banner = Fore.LIGHTYELLOW_EX + """
-_  _ ____ _ _  _ _  _ ____ ____ ____ _  _ _  _ ____ ____ 
-|\ | | __ | |\ |  \/  [__  |    |__| |\ | |\ | |___ |__/ 
-| \| |__] | | \| _/\_ ___] |___ |  | | \| | \| |___ |  \ 
-                                                         
+    banner = Style.BRIGHT +"""
+{}_  _ ____ _ _  _ _  _ ____ ____ ____ _  _ _  _ ____ ____ 
+{}|\ | | __ | |\ |  \/  [__  |    |__| |\ | |\ | |___ |__/ 
+{}| \| |__] | | \| _/\_ ___] |___ |  | | \| | \| |___ |  \ 
+                                                            
 {}              TURKZEN & OzlemBalci                                                   
 {}          github.com/TURKZEN/nginxScanner
-    """.format(Fore.LIGHTCYAN_EX,Fore.GREEN)
+    """.format(Fore.RED,Fore.CYAN,Fore.GREEN,Fore.LIGHTCYAN_EX,Fore.LIGHTMAGENTA_EX)
     print(banner)
 
 def randomBanner():
