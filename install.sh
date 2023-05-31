@@ -16,10 +16,15 @@ python3 /opt/nginxScanner/nginxScanner.py \$1
 """ > /usr/bin/nginxScanner
 
 pip3 install -r requirements.txt
+
+clear
+
 echo ""
-echo "installation complete!"
+echo "Installation Complete!"
 
 sleep 1 
+
+clear
 
 nginxScanner
 
